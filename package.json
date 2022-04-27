@@ -1,0 +1,23 @@
+{
+  "name": "curso-intermedio-poo-js",
+  "version": "1.0.0",
+  "description": "curso intermedio de POO en JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguel-javela/curso-intermedio-POO-JS.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "POO"
+  ],
+  "author": "miguel javela <migueljavela2014@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miguel-javela/curso-intermedio-POO-JS/issues"
+  },
+  "homepage": "https://github.com/miguel-javela/curso-intermedio-POO-JS#readme"
+}
