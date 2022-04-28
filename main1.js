@@ -52,4 +52,43 @@ function recursiva(numbersArray){
         return recursiva (numbersArray);
     }
 }
-recursiva(numeritos);
+//recursiva(numeritos);
+
+function isObject(subject){
+    return typeof subject == "object";
+}
+function isArray(subject){
+    return Array.isArray(subject);
+}
+
+//funcion que aplica recursividad para copiar un objeto a otro ingluyendo sus funciones
+//y que cuando se afecta una propiedad de uno no se afecte la del otro
+function deepCopy(subject){
+    let copySubject;
+    const subjectIsObject = isObject(subject);
+    const subjectIsArray = isArray(subject);
+
+    if(subjectIsArray){
+        copySubject = [];
+    } else if (subjectIsObject){
+        copySubject = {};
+    } else {
+        return subject;
+    }
+
+    for(key in subject){
+        const keyIsObject = isObject(subject[key]);
+
+        if(keyIsObject){
+            copySubject[key] = deepCopy(subject[key]);
+        } else {
+            if (subjectIsArray){
+                copySubject.push(subject[key])
+            } else {
+                copySubject[key] = subject[key];
+            }
+        }
+    }
+
+    return copySubject;
+}
