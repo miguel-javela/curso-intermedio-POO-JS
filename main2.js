@@ -12,8 +12,10 @@ function createStudent({
     approvedCourses = [],
     learningPaths = []
 } = {}){
-    return {
-        name,
+    const private = {
+        "_name": name
+    };
+    const public = {
         email,
         age,
         approvedCourses,
@@ -22,8 +24,25 @@ function createStudent({
             twitter,
             instagram,
             facebook
+        },
+        readName(){
+            return private["_name"];
+        },
+        changeName(newName){
+            private._name = newName;
         }
-    };
+        
+    }
+    //esto evitaria aplicar polimorfismo
+    Object.defineProperty(public,"readName",{
+        writable:false,
+        configurable:false
+    });
+    Object.defineProperty(public,"changeName",{
+        writable:false,
+        configurable:false
+    });
+    return public;
 }
 
 const data = createStudent();
