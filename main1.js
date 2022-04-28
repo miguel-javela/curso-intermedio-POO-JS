@@ -4,6 +4,9 @@ const obj1 = {
     c: {
         d: "d",
         e: "e"
+    },
+    editA(){
+        this.a = "AAAAAA"
     }
 };
 
@@ -20,3 +23,7 @@ const obj3 = Object.assign({},obj1);
 //con objetos dentro objetos
 //si editamos las propiedades desde la copia no se afecta al original, pero desde el original si afecta a la copia
 const obj4 = Object.assign(obj1);
+
+//estos metodos permiten copiar las propiedades perfectamente asi tenga objetos dentro pero no copia los metodos
+const stringFieldComplex = JSON.stringify(obj1);
+const obj5 = JSON.parse(stringFieldComplex);
