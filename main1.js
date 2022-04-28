@@ -92,3 +92,24 @@ function deepCopy(subject){
 
     return copySubject;
 }
+
+const studentBase = {
+    name: undefined,
+    email: undefined,
+    age: undefined,
+    approvedCourses: undefined,
+    learningPaths: undefined,
+    socialMedia:{
+        twitter: undefined,
+        instagram: undefined,
+        facebook: undefined
+    }
+};
+
+const nibia = deepCopy (studentBase);
+Object.seal(nibia);
+nibia.name = "nibia"
+// Object.defineProperty(nibia,"name",{
+//     value: "nibia",
+//     configurable: false
+// })
