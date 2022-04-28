@@ -27,3 +27,29 @@ const obj4 = Object.assign(obj1);
 //estos metodos permiten copiar las propiedades perfectamente asi tenga objetos dentro pero no copia los metodos
 const stringFieldComplex = JSON.stringify(obj1);
 const obj5 = JSON.parse(stringFieldComplex);
+
+// ********* recursividad ***********
+// function recursiva (){
+//     if(/*validacion  */){
+//         //lamados recursivos 
+//     } else {
+//         //lamados normales, sin recursividad
+//     }
+// }
+
+ const numeritos = [0,1,2,3,4,5,77777]
+// let numerito = 0;
+// for(let index = 0; index < numeritos.length; index++){
+//     numerito = numeritos[index];
+//     console.log({index, numerito})
+// }
+
+function recursiva(numbersArray){
+    if (numbersArray.length != 0){
+        const firstNum = numbersArray[0];
+        console.log(firstNum)
+        numbersArray.shift();
+        return recursiva (numbersArray);
+    }
+}
+recursiva(numeritos);
